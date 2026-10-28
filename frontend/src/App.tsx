@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -39,7 +39,7 @@ export const App: React.FC = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <Router>
         <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans">
           {/* Top Demo Disclaimer */}
           <DemoDisclaimer />
@@ -76,7 +76,7 @@ export const App: React.FC = () => {
           {/* Persistent Footer */}
           <Footer />
         </div>
-      </BrowserRouter>
+      </Router>
     </QueryClientProvider>
   );
 };
